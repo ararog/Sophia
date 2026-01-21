@@ -1,0 +1,7 @@
+name: "🚀 Feature Request"
+description: Create a new ticket for a feature request.
+title: "🚀 [FEATURE] - <title>"
+labels: [
+  "feature",
+  "enhancement"
+]
