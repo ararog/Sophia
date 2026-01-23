@@ -3,22 +3,6 @@
 version = 4
 
 [[package]]
-name = "Sophia"
-version = "0.1.0"
-dependencies = [
- "bytes",
- "clap",
- "http",
- "http-body-util",
- "hyper",
- "hyper-util",
- "log",
- "thiserror",
- "tokio",
- "vetis",
-]
-
-[[package]]
 name = "anstream"
 version = "0.6.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -598,10 +582,10 @@ dependencies = [
 name = "jsonmock"
 version = "0.1.0"
 dependencies = [
- "Sophia",
  "bytes",
  "http-body-util",
  "hyper",
+ "sofie",
  "std-logger",
  "tokio",
 ]
@@ -956,6 +940,22 @@ checksum = "86f4aa3ad99f2088c990dfa82d367e19cb29268ed67c574d10d0a4bfe71f07e0"
 dependencies = [
  "libc",
  "windows-sys 0.60.2",
+]
+
+[[package]]
+name = "sofie"
+version = "0.1.0"
+dependencies = [
+ "bytes",
+ "clap",
+ "http",
+ "http-body-util",
+ "hyper",
+ "hyper-util",
+ "log",
+ "thiserror",
+ "tokio",
+ "vetis",
 ]
 
 [[package]]
