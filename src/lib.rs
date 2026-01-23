@@ -1,7 +1,10 @@
 use std::future::Future;
 
 use log::error;
-use vetis::{RequestType, ResponseType, Vetis, server::{config::ServerConfig, errors::VetisError}};
+use vetis::{
+    server::{config::ServerConfig, errors::VetisError},
+    RequestType, ResponseType, Vetis,
+};
 
 use crate::errors::SophiaError;
 
@@ -29,9 +32,7 @@ impl Sophia {
 
         let mut server = Vetis::new(config);
 
-        let result =server
-            .run(handler)
-            .await;
+        let result = server.run(handler).await;
 
         if let Err(e) = result {
             error!("Failed to start server: {}", e);
