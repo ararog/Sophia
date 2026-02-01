@@ -18,34 +18,34 @@ permalink: /
 
 Built on top of [hyper](https://github.com/hyperium/hyper).
 
-## 🗺️ Roadmap
+## Roadmap
 
 Sofie is continuously evolving! Here's what we're working on:
 
 ### Security & Authentication
 
-- **🔐 Authentication** - Multiple auth methods (JWT, OAuth, Session)
-- **🛡️ Authorization** - Role-based access control
-- **🔒 CSRF Protection** - Cross-site request forgery prevention
+- **Authentication** - Multiple auth methods (JWT, OAuth, Session)
+- **Authorization** - Role-based access control
+- **CSRF Protection** - Cross-site request forgery prevention
 
 ### Middleware & Features
 
-- **🔌 Middleware System** - Composable request/response processing
-- **⚡ Rate Limiting** - Protect against abuse and DoS attacks
-- **📝 Sessions** - User session management
-- **🌐 CORS** - Cross-origin resource sharing support
+- **Middleware System** - Composable request/response processing
+- **Rate Limiting** - Protect against abuse and DoS attacks
+- **Sessions** - User session management
+- **CORS** - Cross-origin resource sharing support
 
 ### Real-time & Monitoring
 
-- **🔌 WebSocket** - Real-time bidirectional communication
-- **📊 Metrics** - Application performance monitoring
-- **📝 Logging** - Structured logging integration
-- **🔍 Tracing** - Distributed tracing support
+- **WebSocket** - Real-time bidirectional communication
+- **Metrics** - Application performance monitoring
+- **Logging** - Structured logging integration
+- **Tracing** - Distributed tracing support
 
 ### AI & Future
 
-- **🤖 AI Agents** - Built-in AI service integration
-- **🚀 Advanced Features** - Cutting-edge web technologies
+- **AI Agents** - Built-in AI service integration
+- **Advanced Features** - Cutting-edge web technologies
 
 ## Quick Start
 
