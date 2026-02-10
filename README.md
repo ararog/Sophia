@@ -1,5 +1,10 @@
 # Sofie
 
+[![crates.io](https://img.shields.io/crates/v/sofie?style=flat-square)](https://crates.io/crates/sofie) 
+[![Build Status](https://github.com/ararog/sofie/actions/workflows/rust.yml/badge.svg?event=push)](https://github.com/ararog/sofie/actions/workflows/rust.yml) 
+[![Documentation](https://docs.rs/deboa/badge.svg)](https://docs.rs/deboa/latest/deboa)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **The elegant full-stack web framework that makes Rust web development effortless**
 
 **Sofie** is a comprehensive, production-ready web framework for Rust that combines simplicity with power. Built on top of VeTiS, it provides everything you need to build modern web applications - from REST APIs to full-featured web services - with a clean, intuitive API that makes development a joy.
