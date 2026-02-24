@@ -2,10 +2,10 @@
 mod handler_tests {
     use http::HeaderValue;
     use hyper::StatusCode;
-    use vetis::Response;
+    use vetis::server::http::Response;
 
     #[tokio::test]
-    async fn test_response_creation() {
+    async fn test_response_creation() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         let response: Response = Response::builder()
             .status(StatusCode::OK)
             .text("Hello, World!");
@@ -16,6 +16,8 @@ mod handler_tests {
                 .status(),
             StatusCode::OK
         );
+
+        Ok(())
     }
 
     #[tokio::test]
@@ -174,10 +176,10 @@ mod handler_tests {
 mod handler_integration_tests {
     use http::HeaderValue;
     use hyper::StatusCode;
-    use vetis::Response;
+    use vetis::server::http::Response;
 
     #[tokio::test]
-    async fn test_rest_api_patterns() {
+    async fn test_rest_api_patterns() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         let success_response: Response = Response::builder()
             .status(StatusCode::OK)
             .header("Content-Type", HeaderValue::from_static("application/json"))
@@ -222,6 +224,8 @@ mod handler_integration_tests {
                 .status(),
             StatusCode::NOT_FOUND
         );
+
+        Ok(())
     }
 
     #[tokio::test]

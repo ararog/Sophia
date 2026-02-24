@@ -2,12 +2,9 @@ use std::{fs::read_to_string, future::Future, path::Path};
 
 use log::error;
 use vetis::{
-    config::{ListenerConfig, ServerConfig, VirtualHostConfig},
+    config::server::{virtual_host::VirtualHostConfig, ListenerConfig, ServerConfig},
     errors::VetisError,
-    server::{
-        path::HandlerPath,
-        virtual_host::{handler_fn, VirtualHost},
-    },
+    server::virtual_host::{handler_fn, path::HandlerPath, VirtualHost},
     Vetis,
 };
 
@@ -19,8 +16,8 @@ pub mod config;
 pub mod errors;
 mod tests;
 
-pub type Request = vetis::Request;
-pub type Response = vetis::Response;
+pub type Request = vetis::server::http::Request;
+pub type Response = vetis::server::http::Response;
 
 pub struct App {
     config: Config,
@@ -52,11 +49,13 @@ impl Default for App {
         let listener_config = ListenerConfig::builder()
             .port(port)
             .interface(interface)
-            .build();
+            .build()
+            .expect("Failed to build listener config");
 
         let server_config = ServerConfig::builder()
             .add_listener(listener_config)
-            .build();
+            .build()
+            .expect("Failed to build server config");
 
         App { config, server: Vetis::new(server_config) }
     }

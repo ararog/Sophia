@@ -18,15 +18,18 @@ mod sofie_tests {
 
 #[cfg(test)]
 mod sophia_integration_tests {
-    use vetis::config::{ListenerConfig, ServerConfig};
+    use vetis::{
+        config::server::{ListenerConfig, ServerConfig},
+        server::http::{Request, Response},
+    };
 
     use crate::App;
 
     #[tokio::test]
     async fn test_sophia_handler_signature() {
         async fn test_handler(
-            _req: vetis::Request,
-        ) -> Result<vetis::Response, Box<dyn std::error::Error + Send + Sync>> {
+            _req: Request,
+        ) -> Result<Response, Box<dyn std::error::Error + Send + Sync>> {
             // Return a simple error since we can't create ResponseType easily
             Err("Test error".into())
         }
@@ -37,17 +40,17 @@ mod sophia_integration_tests {
     }
 
     #[tokio::test]
-    async fn test_sophia_configuration() {
+    async fn test_sophia_configuration() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         let mut sophia = App::default();
 
         let listener_config = ListenerConfig::builder()
             .port(8080)
             .interface("127.0.0.1")
-            .build();
+            .build()?;
 
         let config = ServerConfig::builder()
             .add_listener(listener_config)
-            .build();
+            .build()?;
 
         assert_eq!(
             config
@@ -60,10 +63,12 @@ mod sophia_integration_tests {
 
         let _ = &mut sophia;
         assert!(true);
+
+        Ok(())
     }
 
     #[tokio::test]
-    async fn test_sophia_error_handling() {
+    async fn test_sophia_error_handling() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         use crate::errors::SofieError;
 
         let error = SofieError::ServerStart("Test error".to_string());
@@ -80,5 +85,7 @@ mod sophia_integration_tests {
 
         let error3 = SofieError::ServerStart("Different error".to_string());
         assert_ne!(error, error3);
+
+        Ok(())
     }
 }
