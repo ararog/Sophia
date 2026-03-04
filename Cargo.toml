@@ -35,7 +35,7 @@ hyper-util = "0.1.19"
 log = "0.4.29"
 thiserror = "2.0.18"
 vetis = { version = "0.1.4-beta.5" }
-tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+tokio = { version = "1.50", features = ["macros", "rt-multi-thread"] }
 toml = "1.0.3"
 serde = "1.0.228"
 matchit = "0.9.1"
