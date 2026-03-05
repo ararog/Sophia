@@ -2709,7 +2709,9 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 
 [[package]]
 name = "vetis"
-version = "0.1.4-beta.4"
+version = "0.1.4-beta.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "50124f6d436fd2047a885a7d75811c4eec05e1d9429d00137a68ecddc049cd0d"
 dependencies = [
  "async-signal",
  "blocking",

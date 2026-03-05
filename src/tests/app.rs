@@ -35,8 +35,6 @@ mod sophia_integration_tests {
         }
 
         let _handler = test_handler;
-
-        assert!(true);
     }
 
     #[tokio::test]
@@ -62,7 +60,6 @@ mod sophia_integration_tests {
         assert_eq!(config.listeners()[0].interface(), "127.0.0.1");
 
         let _ = &mut sophia;
-        assert!(true);
 
         Ok(())
     }

@@ -33,3 +33,13 @@ pub struct SecurityConfig {
     cert_path: String,
     key_path: String,
 }
+
+impl SecurityConfig {
+    pub fn cert_path(&self) -> &str {
+        &self.cert_path
+    }
+
+    pub fn key_path(&self) -> &str {
+        &self.key_path
+    }
+}
